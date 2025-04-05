@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import BaseButton from '@/components/ui/BaseButton.vue'
+import BaseCard from '@/components/ui/BaseCard.vue'
 </script>
 
 <template>
@@ -10,7 +11,7 @@ import BaseButton from '@/components/ui/BaseButton.vue'
       <BaseCard class="bg-blue-50">
         <h2 class="text-xl font-semibold mb-4">My Vehicles</h2>
         <p class="mb-4">Manage your vehicles and track their service history.</p>
-        <BaseButton @click="$router.push('/vehicles')">View Vehicles</BaseButton>
+        <BaseButton disabled @click="$router.push('/vehicles')">View Vehicles</BaseButton>
       </BaseCard>
 
       <BaseCard class="bg-green-50">
