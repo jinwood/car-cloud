@@ -1,8 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import BaseButton from '@/components/ui/BaseButton.vue'
+</script>
 
 <template>
   <div>
-    <h1 class="text-2xl font-bold mb-6">Welcome to Car Service Tracker</h1>
+    <h1 class="text-2xl font-bold mb-6">Welcome to Car Cloud</h1>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <BaseCard class="bg-blue-50">
