@@ -1,5 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { auth } from '@/firebase'
 import HomeView from '../views/HomeView.vue'
+import LoginView from '../views/account/LoginView.vue'
+import RegisterView from '../views/account/RegisterView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,16 +11,30 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+      meta: { requiresAuth: true },
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue'),
+      path: '/login',
+      name: 'Login',
+      component: LoginView,
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: RegisterView,
     },
   ],
+})
+
+router.beforeEach((to, _from, next) => {
+  const requiresAuth = to.matched.some((record) => record.meta.requiresAuth)
+  const currentUser = auth.currentUser
+
+  if (requiresAuth && !currentUser) {
+    next('/register')
+  } else {
+    next()
+  }
 })
 
 export default router
