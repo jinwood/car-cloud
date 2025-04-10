@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-100 flex flex-col w-full">
+  <div class="min-h-screen bg-gray-100 flex flex-col dark:bg-gray-900">
     <AppHeader />
     <main class="flex-grow container mx-auto px-4 py-6">
       <router-view />
