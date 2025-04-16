@@ -45,7 +45,7 @@ const handleLogin = async () => {
 </script>
 
 <template>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div class="">
     <BaseCard
       ><h2 class="text-2xl font-semibold pb-4">Login</h2>
       <form @submit.prevent="handleLogin">
