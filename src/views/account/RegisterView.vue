@@ -51,7 +51,7 @@ const handleRegister = async () => {
       <form @submit.prevent="handleRegister">
         <div class="flex flex-col gap-4">
           <TextInput id="email" label="Email" type="email" :value="email" />
-          <TextInput id="password" label="Password" type="password" :value="password" />
+          <TextInput id="password" label="Password" type="password" />
           <BaseButton type="submit" :disabled="loading">
             {{ loading ? 'Registering...' : 'Submit' }}
           </BaseButton>
