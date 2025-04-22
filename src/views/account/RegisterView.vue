@@ -46,8 +46,8 @@ const handleRegister = async () => {
 </script>
 <template>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <BaseCard><h2 class="text-2xl font-semibold">Register</h2></BaseCard>
     <BaseCard>
+      <h2 class="text-2xl font-semibold">Register</h2>
       <form @submit.prevent="handleRegister">
         <div class="flex flex-col gap-4">
           <TextInput id="email" label="Email" type="email" :value="email" />

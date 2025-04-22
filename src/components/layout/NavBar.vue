@@ -35,7 +35,11 @@
           @click="closeMenu"
           >Profile</router-link
         >
-        <button @click="logout" class="block px-2 py-1 sm:mx-2 text-left hover:text-blue-200">
+        <button
+          v-if="user"
+          @click="logout"
+          class="block px-2 py-1 sm:mx-2 text-left hover:text-blue-200 cursor-pointer"
+        >
           Logout
         </button>
       </div>
@@ -44,8 +48,12 @@
 </template>
 
 <script lang="ts">
+import { signOut } from 'firebase/auth'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { auth } from '@/firebase'
+
+const user = auth.currentUser
 
 export default {
   name: 'NavBar',
@@ -58,8 +66,9 @@ export default {
     }
 
     const logout = async () => {
+      console.log('logout')
       try {
-        //logout here
+        await signOut(auth)
         router.push('/login')
       } catch (error) {
         console.error('Logout error:', error)
@@ -70,6 +79,7 @@ export default {
       isOpen,
       closeMenu,
       logout,
+      user,
     }
   },
 }

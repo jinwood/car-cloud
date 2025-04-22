@@ -6,6 +6,7 @@ import TextInput from '@/components/ui/TextInput.vue'
 import { ref } from 'vue'
 import { useFirebaseAuth } from 'vuefire'
 import { signInWithEmailAndPassword } from 'firebase/auth'
+import router from '@/router'
 
 const auth = useFirebaseAuth()
 const email = ref('foo@bar.com')
@@ -14,7 +15,6 @@ const error = ref('')
 const loading = ref(false)
 
 const handleLogin = async () => {
-  console.log('handleLogin')
   if (!auth) {
     throw new Error('bad')
   }
@@ -31,6 +31,8 @@ const handleLogin = async () => {
     const userCredential = await signInWithEmailAndPassword(auth, email.value, password.value)
     if (userCredential.user) {
       console.log('cool', userCredential.user.email)
+
+      router.push('/')
     }
   } catch (e) {
     if (e instanceof Error) {
