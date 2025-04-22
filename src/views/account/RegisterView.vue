@@ -45,7 +45,7 @@ const handleRegister = async () => {
 }
 </script>
 <template>
-  <div class="">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     <BaseCard><h2 class="text-2xl font-semibold">Register</h2></BaseCard>
     <BaseCard>
       <form @submit.prevent="handleRegister">

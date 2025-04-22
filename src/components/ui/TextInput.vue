@@ -8,40 +8,13 @@ const props = defineProps({
 })
 </script>
 <template>
-  <div class="input-wrapper">
-    <label class="label" :for="id">{{ props.label }}:</label>
-    <input :type="props.type" :id="props.id" :value="props.value" class="text-input" />
+  <div>
+    <label :for="id">{{ props.label }}</label>
+    <input
+      :type="props.type"
+      :id="props.id"
+      :value="props.value"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    />
   </div>
 </template>
-<style lang="css" scoped>
-@import '../../assets/base.css';
-.input-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-}
-
-.label {
-  padding: 4px;
-}
-
-.text-input {
-  padding: 6px;
-  background-color: var(--input-color);
-  /* border-color: var(--border-color); */
-  border: 2px solid var(--border-color);
-  border-radius: var(--rounded-sm);
-  border-style: solid;
-  --webkit-border-radius: var(--rounded-sm);
-  color: var(--text-color);
-  font-size: var(--text-sm);
-
-  :focus {
-    border-color: var(--outline-color);
-  }
-
-  @media (min-width: 500px) {
-    width: 100%;
-  }
-}
-</style>
