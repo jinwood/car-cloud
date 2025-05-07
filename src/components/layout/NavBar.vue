@@ -49,12 +49,15 @@
 
 <script lang="ts">
 import { signOut } from 'firebase/auth'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { auth } from '@/firebase'
-import { useAuthStore } from '@/stores/authStore'
+import { useAuthStore, type UserData } from '@/stores/useAuthStore'
 
-const user = useAuthStore()
+let user: UserData | null
+onMounted(() => {
+  user = useAuthStore().user
+})
 
 export default {
   name: 'NavBar',

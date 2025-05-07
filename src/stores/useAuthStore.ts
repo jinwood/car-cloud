@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 import { useFirebaseAuth } from 'vuefire'
 
-interface UserData {
+export interface UserData {
   uid: string
   email: string | null
   displayName: string | null
