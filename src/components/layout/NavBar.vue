@@ -52,8 +52,9 @@ import { signOut } from 'firebase/auth'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { auth } from '@/firebase'
+import { useAuthStore } from '@/stores/authStore'
 
-const user = auth.currentUser
+const user = useAuthStore()
 
 export default {
   name: 'NavBar',

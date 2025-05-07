@@ -5,7 +5,7 @@ import BaseCard from '@/components/ui/BaseCard.vue'
 
 <template>
   <div>
-    <h1 class="text-2xl font-bold mb-6">Welcome to Car Cloud</h1>
+    <h1 class="text-2xl font-bold mb-6 text-white">Welcome to Car Cloud</h1>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <BaseCard class="bg-blue-50">
@@ -21,11 +21,11 @@ import BaseCard from '@/components/ui/BaseCard.vue'
       </BaseCard>
     </div>
 
-    <div class="mt-8">
+    <BaseCard class="mt-8">
       <h2 class="text-xl font-semibold mb-4">Recent Services</h2>
       <div>Conditional Bit</div>
       <p class="text-gray-500">If recent service, something here.</p>
       <p class="text-gray-500">Else: No recent services found.</p>
-    </div>
+    </BaseCard>
   </div>
 </template>
