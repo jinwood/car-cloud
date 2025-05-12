@@ -5,6 +5,7 @@ import LoginView from '../views/account/LoginView.vue'
 import RegisterView from '../views/account/RegisterView.vue'
 import { getCurrentUser, useCurrentUser } from 'vuefire'
 import { useAuthStore } from '@/stores/useAuthStore'
+import VehicleList from '@/views/VehicleList.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -24,6 +25,11 @@ const router = createRouter({
       path: '/register',
       name: 'Register',
       component: RegisterView,
+    },
+    {
+      path: '/vehicles',
+      name: 'My Vehicles',
+      component: VehicleList,
     },
   ],
 })
