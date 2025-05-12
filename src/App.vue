@@ -11,12 +11,17 @@
 <script lang="ts">
 import AppHeader from '@/components/layout/AppHeader.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
+import { useAuthStore } from './stores/useAuthStore'
 
 export default {
   name: 'App',
   components: {
     AppHeader,
     AppFooter,
+  },
+  created() {
+    const authStore = useAuthStore()
+    authStore.init()
   },
 }
 </script>
